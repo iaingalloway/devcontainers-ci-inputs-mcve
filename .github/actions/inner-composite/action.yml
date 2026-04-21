@@ -1,0 +1,17 @@
+name: Inner composite
+description: Passes a value to the devcontainers/ci action
+inputs:
+  image-tag:
+    description: Image tag to build and push
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Build and push devcontainer image
+      uses: devcontainers/ci@b63b30de439b47a52267f241112c5b453b673db5
+      with:
+        imageName: ghcr.io/${{ github.repository }}/devcontainer
+        imageTag: ${{ inputs.image-tag }}
+        push: always
+        subFolder: src
