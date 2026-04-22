@@ -9,7 +9,7 @@ runs:
   using: composite
   steps:
     - name: Build and push devcontainer image
-      uses: devcontainers/ci@b63b30de439b47a52267f241112c5b453b673db5
+      uses: iaingalloway/devcontainers-ci@6d0c488194867d9fa266926cf009d9c61b7156e1
       with:
         imageName: ghcr.io/${{ github.repository }}/devcontainer
         imageTag: ${{ inputs.image-tag }}
